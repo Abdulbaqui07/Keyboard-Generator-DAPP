@@ -67,7 +67,7 @@ export default function Home() {
         }
         await getKeyboards();
       })
-  
+
       keyboardsContract.on('TipSent', (recipient, amount) => {
         if (addressesEqual(recipient, connectedAccount)) {
           toast(`You received a tip of ${ethers.utils.formatEther(amount)} eth!`, { id: recipient + amount });
